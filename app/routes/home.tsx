@@ -75,6 +75,8 @@ export default function Home({}: Route.ComponentProps) {
         "@type": "WebSite",
         name: "Money Dungeon",
         url: "https://moneydungeon.com/",
+        description:
+          "Money Dungeon offers fun money learning games and practical financial education. Learn budgeting, saving, investing, credit, taxes, and personal finance basics with interactive lessons, quizzes, and tools.",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://moneydungeon.com/?q={search_term_string}",
@@ -89,11 +91,173 @@ export default function Home({}: Route.ComponentProps) {
       },
       {
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
+        mainEntity: [
+          ...faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+          {
+            "@type": "Question",
+            name: "What games can I play?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You can play Budget Boss, Save the Treasure, Interest Quest, Credit Score Climb, Tax Trail, and Investors’ Lab. Each game teaches a core money skill.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What lessons are available?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Lessons cover budgeting basics, saving and goals, debt and credit, investing 101, banking smart, and taxes simplified. Each lesson includes guides, checklists, and quizzes.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are there free tools?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Use the Budget Planner, Interest Calculator, and Debt Payoff Helper to apply what you learn.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Who is Money Dungeon for?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Students, busy adults, parents, and teachers. The site is designed for beginners and anyone who wants practical, bite-size financial literacy.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is there a glossary?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The glossary explains key terms like APR, APY, principal, asset allocation, emergency fund, and more.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What budgeting methods are explained?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You’ll find guides for the 50-30-20 rule, zero-based budgeting, envelope method, and pay-yourself-first.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I learn about compound interest?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The Compound Interest section explains principal, rate, compounding frequency, APY vs APR, and includes tips for automating savings.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What credit score factors are covered?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Payment history, utilization, age of accounts, mix, and inquiries are all explained with actionable habits.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are there resources for kids and teens?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The Kids and Teens Money Lab includes allowance trackers, goal jar games, and mini market activities.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can teachers use Money Dungeon?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Classroom resources include lesson outlines, printables, quizzes, and group challenges.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What topics are in the Editorial Roadmap?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Upcoming features include interactive quizzes, printable planners, video walkthroughs, and deeper guides on budgeting, credit scores, index funds, and tax basics.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I manage debt?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Learn about snowball and avalanche payoff methods, consolidation, balance transfers, and refinancing.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What retirement topics are covered?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "401(k), IRA, Roth IRA, employer matches, contribution limits, and withdrawal penalties are explained.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How can I grow my income?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Explore side hustles, freelancing, reselling, and small business basics to boost income.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I prepare for emergencies?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Build emergency funds and learn preparedness strategies for medical bills, job loss, and repairs.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What insurance topics are explained?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Learn about health, auto, home, renters, and life insurance, including deductibles and premiums.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does inflation affect me?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "See how inflation reduces buying power and learn strategies to protect your money.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are there student loan guides?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Compare federal and private loans, repayment plans, forgiveness programs, and ways to lower college costs.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What advanced investing topics are covered?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Learn about ETFs, rebalancing, risk tolerance, diversification, and asset allocation.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is there content for teens?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Teens can learn about budgeting allowance, opening bank accounts, using debit safely, and avoiding debt traps.",
+            },
+          },
+        ],
       },
       {
         "@type": "ItemList",
@@ -103,6 +267,102 @@ export default function Home({}: Route.ComponentProps) {
           position: i + 1,
           name: name,
         })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Financial Education Lessons",
+        itemListElement: [
+          "Budgeting Basics",
+          "Saving and Goals",
+          "Debt and Credit",
+          "Investing 101",
+          "Banking Smart",
+          "Taxes Simplified",
+        ].map((name, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Free Money Tools",
+        itemListElement: [
+          "Budget Planner",
+          "Interest Calculator",
+          "Debt Payoff Helper",
+        ].map((name, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Audience Segments",
+        itemListElement: [
+          "Students",
+          "Busy Adults",
+          "Parents and Teachers",
+        ].map((name, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Glossary Terms",
+        itemListElement: [
+          "APR",
+          "APY",
+          "Principal",
+          "Asset Allocation",
+          "Emergency Fund",
+          "Dollar-Cost Averaging",
+          "Expense Ratio",
+          "Sinking Fund",
+        ].map((name, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Budget Methods",
+        itemListElement: [
+          "50-30-20",
+          "Zero Based",
+          "Envelopes",
+          "Pay Yourself First",
+        ].map((name, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Retirement Accounts",
+        itemListElement: ["401(k)", "Traditional IRA", "Roth IRA"].map(
+          (name, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name,
+          })
+        ),
+      },
+      {
+        "@type": "ItemList",
+        name: "Advanced Investing Concepts",
+        itemListElement: ["ETFs", "Rebalancing", "Risk Tolerance"].map(
+          (name, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name,
+          })
+        ),
       },
     ],
   };
